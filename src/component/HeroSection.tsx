@@ -1,5 +1,5 @@
 // import Background from "../assets/bg.jpg";
-import Logo from "../assets/mrfox-logo-y.png";
+import Logo from "../assets/tch_logo.svg";
 
 const HeroSection = () => {
   return (
@@ -17,7 +17,7 @@ const HeroSection = () => {
             Beyond the Future
           </p>
           <p className="text-center mt-4 text-black/70 px-8">
-            MrFoxChain believes in Web3 for all. MrFoxChain is a decentralised EVM
+            TCH BAS believes in Web3 for all. TCH BAS is a decentralised EVM
             scaling platform that enables developers to build scalable
             user-friendly dApps with low transaction fees without ever
             sacrificing on security.

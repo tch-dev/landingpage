@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import { useState } from "react";
-import Logo from "../assets/mrfox-logo-y.png";
+import Logo from "../assets/tch_logo.svg";
 
 const NavBar = () => {
   const provider = new ethers.providers.Web3Provider((window as any).ethereum);
@@ -11,15 +11,15 @@ const NavBar = () => {
     try {
       await provider.send("wallet_addEthereumChain", [
         {
-          chainId: "0x2bd",
-          chainName: "MrFoxChain",
-          rpcUrls: ["https://rpc.mrfoxchain.com"],
+          chainId: "0x2be",
+          chainName: "TCH BAS",
+          rpcUrls: ["https://rpc.tch.dev"],
           nativeCurrency: {
-            name: "MrFox Coin",
-            symbol: "FOX",
+            name: "TCH Coin",
+            symbol: "TCH",
             decimals: 18,
           },
-          blockExplorerUrls: ["https://exp.mrfoxchain.com"],
+          blockExplorerUrls: ["https://exp.tch.dev"],
         },
       ]);
     } catch (err) {}
@@ -33,13 +33,13 @@ const NavBar = () => {
             <img src={Logo} className="w-48" alt="jfin_chain" />
             <ul className="sm:inline-flex gap-10 ml-12 hidden">
               <li>
-                <a href="https://exp.mrfoxchain.com">Explorer</a>
+                <a href="https://exp.tch.dev">Explorer</a>
               </li>
               <li>
-                <a href="https://staking.mrfoxchain.com">Staking</a>
+                <a href="https://staking.tch.dev">Staking</a>
               </li>
               <li>
-                <a href="https://bridge.mrfoxchain.com">Bridge</a>
+                <a href="https://bridge.tch.dev">Bridge</a>
               </li>
             </ul>
           </div>
@@ -49,7 +49,7 @@ const NavBar = () => {
                 onClick={handleAddChain}
                 className="bg-P100 hover:bg-P100/75 text-SL100 font-bold py-2 px-4 rounded-full"
               >
-                Add MrFoxCHAIN
+                Add TCH BAS
               </button>
             </div>
           )}
@@ -67,13 +67,13 @@ const NavBar = () => {
           <div>
             <ul className="ml-4 mt-5">
               <li>
-                <a href="https://exp.mrfoxchain.com">Explore</a>
+                <a href="https://exp.tch.dev">Explore</a>
               </li>
               <li>
-                <a href="https://staking.mrfoxchain.com">Staking</a>
+                <a href="https://staking.tch.dev">Staking</a>
               </li>
               <li>
-                <a href="https://bridge.mrfoxchain.com">Bridge</a>
+                <a href="https://bridge.tch.dev">Bridge</a>
               </li>
             </ul>
             {provider && (
@@ -82,7 +82,7 @@ const NavBar = () => {
                   onClick={handleAddChain}
                   className="bg-P100 hover:bg-P100/75 text-SL100 font-bold py-2 px-4 rounded-full"
                 >
-                  Add MrFoxCHAIN
+                  Add TCH BAS
                 </button>
               </div>
             )}
