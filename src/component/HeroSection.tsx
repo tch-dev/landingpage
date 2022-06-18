@@ -17,10 +17,7 @@ const HeroSection = () => {
             Beyond the Future
           </p>
           <p className="text-center mt-4 text-black/70 px-8">
-            TCH BAS believes in Web3 for all. TCH BAS is a decentralised EVM
-            scaling platform that enables developers to build scalable
-            user-friendly dApps with low transaction fees without ever
-            sacrificing on security.
+            TCHBAS  is a next-gen developer infrastructure that enables developers to build large-scale BSC-based applications with increased throughput and significantly reduced or even zero transaction fees. BAS is an infrastructure that enables developers and node operators to create and operate their own blockchain operating parallel to the BSC mainnet. BAS can be used as an internal value system for many users, offloading the traffic from BSC Mainnet while remaining connected to the BNB Chain. It is accomplished by using a different consensus engine and a modern execution environment that developers or the community can customize with their own parameters.
           </p>
         </div>
       </div>

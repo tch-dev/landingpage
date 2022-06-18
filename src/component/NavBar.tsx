@@ -1,29 +1,39 @@
-import { ethers } from "ethers";
-import { useState } from "react";
-import Logo from "../assets/tch_logo.svg";
+import { ethers } from "ethers"
+import { useState } from "react"
+import Logo from "../assets/tch_logo.svg"
+
+import { isMobile } from "react-device-detect"
 
 const NavBar = () => {
-  const provider = new ethers.providers.Web3Provider((window as any).ethereum);
+  const provider = isMobile
+    ? undefined
+    : new ethers.providers.Web3Provider((window as any).ethereum)
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
+  const [alert, setAlert] = useState("")
 
   const handleAddChain = async () => {
+    if (!provider) {
+      setAlert("Please use Metamask browser")
+      return
+    }
+    setAlert("")
     try {
       await provider.send("wallet_addEthereumChain", [
         {
-          chainId: "0x2be",
-          chainName: "TCH BAS",
+          chainId: "0xdad",
+          chainName: "TCHBAS",
           rpcUrls: ["https://rpc.tch.dev"],
           nativeCurrency: {
-            name: "TCH Coin",
-            symbol: "TCH",
+            name: "JFIN Coin",
+            symbol: "JFIN",
             decimals: 18,
           },
           blockExplorerUrls: ["https://exp.tch.dev"],
         },
-      ]);
+      ])
     } catch (err) {}
-  };
+  }
 
   return (
     <header className="navbar border-b shadow-md">
@@ -49,7 +59,7 @@ const NavBar = () => {
                 onClick={handleAddChain}
                 className="bg-P100 hover:bg-P100/75 text-SL100 font-bold py-2 px-4 rounded-full"
               >
-                Add TCH BAS
+                Add TCHBAS
               </button>
             </div>
           )}
@@ -76,21 +86,20 @@ const NavBar = () => {
                 <a href="https://bridge.tch.dev">Bridge</a>
               </li>
             </ul>
-            {provider && (
-              <div className="text-center mt-5">
-                <button
-                  onClick={handleAddChain}
-                  className="bg-P100 hover:bg-P100/75 text-SL100 font-bold py-2 px-4 rounded-full"
-                >
-                  Add TCH BAS
-                </button>
-              </div>
-            )}
+            <div className="text-center mt-5">
+              <button
+                onClick={handleAddChain}
+                className="bg-P100 hover:bg-P100/75 text-SL100 font-bold py-2 px-4 rounded-full"
+              >
+                Add TCHBAS
+              </button>
+              <p className="mt-3">{alert}</p>
+            </div>
           </div>
         )}
       </nav>
     </header>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

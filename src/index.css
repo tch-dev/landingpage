@@ -12,10 +12,10 @@ body {
 }
 
 .main-page {
-  background: rgb(222, 222, 222);
+  background: rgba(1, 91, 67, 0.959);
   background: linear-gradient(
     5deg,
-    rgba(222, 222, 222, 1) 0%,
+    rgba(21, 91, 67, 1) 0%,
     rgba(255, 255, 255, 1) 100%
   );
 }
